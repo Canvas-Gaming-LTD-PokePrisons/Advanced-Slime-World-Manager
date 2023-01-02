@@ -41,7 +41,6 @@ tasks {
         rel("org.apache.commons.io")
         rel("org.checkerframework")
         rel("org.spongepowered.configurate")
-        rel("org.slf4j")
         rel("org.yaml.snakeyaml")
         rel("org.reactivestreams")
         rel("reactor")
