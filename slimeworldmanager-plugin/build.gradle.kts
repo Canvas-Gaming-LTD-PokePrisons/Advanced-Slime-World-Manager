@@ -45,7 +45,6 @@ tasks {
         rel("org.yaml.snakeyaml")
         rel("org.reactivestreams")
         rel("reactor")
-        rel("com.github.luben.zstd")
         rel("com.google.errorprone.annotations")
     }
 
