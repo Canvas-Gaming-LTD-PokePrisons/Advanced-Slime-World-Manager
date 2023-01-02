@@ -27,7 +27,6 @@ import com.grinderwolf.swm.plugin.world.WorldUnlocker;
 import com.grinderwolf.swm.plugin.world.importer.WorldImporter;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import lombok.Getter;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.World;
@@ -126,8 +125,6 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin, Listener {
             return;
         }
         
-        Metrics metrics = new Metrics(this, BSTATS_ID);
-
         final CommandManager commandManager = new CommandManager();
         final PluginCommand swmCommand = getCommand("swm");
         swmCommand.setExecutor(commandManager);

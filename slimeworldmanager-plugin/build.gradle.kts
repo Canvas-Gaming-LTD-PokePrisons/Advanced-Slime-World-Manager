@@ -20,7 +20,6 @@ dependencies {
         exclude("io.netty")
     }
     implementation("org.spongepowered:configurate-yaml:4.1.2")
-    implementation("org.bstats:bstats-bukkit:3.0.0")
     implementation("commons-io:commons-io:2.11.0")
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
@@ -29,23 +28,25 @@ tasks {
     shadowJar {
         archiveClassifier.set("")
 
-        relocate("org.bstats", "com.grinderwolf.swm.internal.bstats")
-        relocate("ninja.leaping.configurate", "com.grinderwolf.swm.internal.configurate")
-        relocate("com.flowpowered.nbt", "com.grinderwolf.swm.internal.nbt")
-        relocate("com.zaxxer.hikari", "com.grinderwolf.swm.internal.hikari")
-        relocate("com.mongodb", "com.grinderwolf.swm.internal.mongodb")
-        relocate("io.lettuce", "com.grinderwolf.swm.internal.lettuce")
-        relocate("org.bson", "com.grinderwolf.swm.internal.bson")
-        relocate("io.leangen.geantyref", "com.grinderwolf.swm.internal.io.leangen.leangen")
-        relocate("org.apache.commons.io", "com.grinderwolf.swm.internal.org.apache.commons.io")
-        relocate("org.checkerframework", "com.grinderwolf.swm.internal.org.checkerframework")
-        relocate("org.spongepowered.configurate", "com.grinderwolf.swm.internal.org.spongepowered.configurate")
-        relocate("org.slf4j", "com.grinderwolf.swm.internal.org.slf4j")
-        relocate("org.yaml.snakeyaml", "com.grinderwolf.swm.internal.org.yaml.snakeyaml")
-        relocate("org.reactivestreams", "com.grinderwolf.swm.internal.org.reactivestreams")
-        relocate("reactor", "com.grinderwolf.swm.internal.reactor")
-        relocate("com.github.luben.zstd", "com.grinderwolf.swm.internal.com.github.luben.zstd")
-        relocate("com.google.errorprone.annotations", "com.grinderwolf.swm.internal.com.google.errorprone.annotations")
+        fun rel(path: String) {
+            relocate(path, "com.grinderwolf.swm.internal.$path")
+        }
+
+        rel("com.flowpowered.nbt")
+        rel("com.zaxxer.hikari")
+        rel("com.mongodb")
+        rel("io.lettuce")
+        rel("org.bson")
+        rel("io.leangen.geantyref")
+        rel("org.apache.commons.io")
+        rel("org.checkerframework")
+        rel("org.spongepowered.configurate")
+        rel("org.slf4j")
+        rel("org.yaml.snakeyaml")
+        rel("org.reactivestreams")
+        rel("reactor")
+        rel("com.github.luben.zstd")
+        rel("com.google.errorprone.annotations")
     }
 
     assemble {
