@@ -16,7 +16,9 @@ dependencies {
     implementation("com.github.luben:zstd-jni:1.5.2-2")
     implementation("com.zaxxer:HikariCP:5.0.1")
     implementation("org.mongodb:mongo-java-driver:3.12.11")
-    implementation("io.lettuce:lettuce-core:6.2.2.RELEASE")
+    implementation("io.lettuce:lettuce-core:6.2.2.RELEASE") {
+        exclude("io.netty")
+    }
     implementation("org.spongepowered:configurate-yaml:4.1.2")
     implementation("org.bstats:bstats-bukkit:3.0.0")
     implementation("commons-io:commons-io:2.11.0")
@@ -37,7 +39,6 @@ tasks {
         relocate("io.leangen.geantyref", "com.grinderwolf.swm.internal.io.leangen.leangen")
         relocate("org.apache.commons.io", "com.grinderwolf.swm.internal.org.apache.commons.io")
         relocate("org.checkerframework", "com.grinderwolf.swm.internal.org.checkerframework")
-        relocate("io.netty", "com.grinderwolf.swm.internal.io.netty")
         relocate("org.spongepowered.configurate", "com.grinderwolf.swm.internal.org.spongepowered.configurate")
         relocate("org.slf4j", "com.grinderwolf.swm.internal.org.slf4j")
         relocate("org.yaml.snakeyaml", "com.grinderwolf.swm.internal.org.yaml.snakeyaml")
