@@ -34,6 +34,15 @@ tasks {
         relocate("com.mongodb", "com.grinderwolf.swm.internal.mongodb")
         relocate("io.lettuce", "com.grinderwolf.swm.internal.lettuce")
         relocate("org.bson", "com.grinderwolf.swm.internal.bson")
+        relocate("io.leangen.geantyref", "com.grinderwolf.swm.internal.io.leangen.leangen")
+        relocate("io.netty", "com.grinderwolf.swm.internal.io.netty")
+        relocate("io.netty", "com.grinderwolf.swm.internal.io.netty")
+        relocate("org.spongepowered.configurate", "com.grinderwolf.swm.internal.org.spongepowered.configurate")
+        relocate("org.slf4j", "com.grinderwolf.swm.internal.org.slf4j")
+        relocate("org.yaml.snakeyaml", "com.grinderwolf.swm.internal.org.yaml.snakeyaml")
+        relocate("org.reactivestreams", "com.grinderwolf.swm.internal.org.reactivestreams")
+        relocate("reactor", "com.grinderwolf.swm.internal.reactor")
+        relocate("com.github.luben.zstd", "com.grinderwolf.swm.internal.com.github.luben.zstd")
     }
 
     assemble {
