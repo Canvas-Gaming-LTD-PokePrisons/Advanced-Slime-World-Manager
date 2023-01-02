@@ -17,7 +17,7 @@ buildscript {
 allprojects {
 
     group = "com.grinderwolf"
-    version = "2.10.0-SNAPSHOT"
+    version = "0.0.1-SNAPSHOT"
 
     apply(plugin = "java")
     apply(plugin = "io.freefair.lombok")
