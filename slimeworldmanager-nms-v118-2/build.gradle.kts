@@ -14,7 +14,11 @@ dependencies {
 
 
 tasks {
-    assemble {
+    reobfJar {
+        outputJar.set(layout.buildDirectory.file("libs/${project.name}-${project.version}.jar"))
+    }
+
+    generateMetadataFileForMavenPublication {
         dependsOn(reobfJar)
     }
 

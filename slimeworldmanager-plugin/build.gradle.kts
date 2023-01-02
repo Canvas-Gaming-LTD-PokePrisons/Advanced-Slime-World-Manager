@@ -49,7 +49,7 @@ tasks {
         rel("com.google.errorprone.annotations")
     }
 
-    assemble {
+    build {
         dependsOn(shadowJar)
     }
 
@@ -58,7 +58,5 @@ tasks {
         jvmArgs("-javaagent:" + project(":slimeworldmanager-classmodifier").tasks.named<AbstractArchiveTask>("shadowJar").flatMap { shadow -> shadow.archiveFile }.get().asFile.toPath())
     }
 }
-
-
 
 description = "slimeworldmanager-plugin"
