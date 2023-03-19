@@ -78,5 +78,13 @@ subprojects {
                 }
             }
         }
+
+        repositories {
+            maven {
+                name = "canvasRepo"
+                url = uri("https://nexus.canvasgaming.org/repository/canvas-deploy/")
+                credentials(PasswordCredentials::class)
+            }
+        }
     }
 }
